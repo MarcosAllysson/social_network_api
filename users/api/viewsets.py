@@ -8,3 +8,6 @@ class UserViewSet(ModelViewSet):
     queryset = User.objects.all()
     permission_classes = [IsAdminUser]
     serializer_class = UserSerializer
+
+    # def get_queryset(self):
+    #     return User.objects.filter(is_active=True)

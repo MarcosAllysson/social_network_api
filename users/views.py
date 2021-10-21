@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from rest_framework.generics import CreateAPIView
-from rest_framework.permissions import IsAuthenticatedOrReadOnly, AllowAny
+from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from users.api.serializers import UserSerializer, RegistrationSerializer
 
