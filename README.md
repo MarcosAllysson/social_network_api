@@ -1,4 +1,4 @@
-# iBR Tecnologia - API Rede Social
+# iBR Tecnologia - API Social Network
 
 ## Tecnologies
 - Django
@@ -11,31 +11,23 @@
 - Then: ```python manage.py runserver```
 
 ## Endpoints
-- "News":  
-  * -- GET: http://127.0.0.1:8000/api/v1/news/
-  * -- POST: http://127.0.0.1:8000/api/v1/news/
-  * -- PUT: http://127.0.0.1:8000/api/v1/news/ID/
-  * -- DELETE: http://127.0.0.1:8000/api/v1/news/ID/
+- "Posts":  
+  * -- GET: http://127.0.0.1:8000/api/v1/posts/
+  * -- POST: http://127.0.0.1:8000/api/v1/posts/
+  * -- PUT: http://127.0.0.1:8000/api/v1/posts/ID/
+  * -- DELETE: http://127.0.0.1:8000/api/v1/posts/ID/
 
-- "Professionals": 
-  * -- GET: http://127.0.0.1:8000/api/v1/professionals/
-  * -- POST: http://127.0.0.1:8000/api/v1/professionals/
-  * -- PUT: http://127.0.0.1:8000/api/v1/professionals/ID/
-  * -- DELETE: http://127.0.0.1:8000/api/v1/professionals/ID/
-  * -- SEARCH WITH CITY, NAME AND OR SPECIALITY: http://127.0.0.1:8000/api/v1/professionals/?speciality=VALUE&city=VALUE&name=VALUE
+- "Users": 
+  * -- GET: http://127.0.0.1:8000/api/v1//
+  * -- POST: http://127.0.0.1:8000/api/v1/users/
+  * -- PUT: http://127.0.0.1:8000/api/v1/users/ID/
+  * -- DELETE: http://127.0.0.1:8000/api/v1/users/ID/
 
-- "Professionals Addresses": 
-  * -- GET: http://127.0.0.1:8000/api/v1/professionals-addresses/
-  * -- POST: http://127.0.0.1:8000/api/v1/professionals-addresses/
-  * -- PUT: http://127.0.0.1:8000/api/v1/professionals-addresses/ID/
-  * -- DELETE: http://127.0.0.1:8000/api/v1/professionals-addresses/ID/
-
-- "Professionals Contacts": 
-  * -- GET: http://127.0.0.1:8000/api/v1/professionals-contacts/"
-  * -- POST: http://127.0.0.1:8000/api/v1/professionals-contacts/"
-  * -- PUT: http://127.0.0.1:8000/api/v1/professionals-contacts/ID/"
-  * -- DELETE: http://127.0.0.1:8000/api/v1/professionals-contacts/ID/"
-
+## Making a request
+- Choose an endpoint
+- You can use postman, insomnia or any other API tool
+- On header, include:
+  - Authorization | Bearer <token>
 
 ## Access Django's admin
 - http://127.0.0.1:8000/admin/
