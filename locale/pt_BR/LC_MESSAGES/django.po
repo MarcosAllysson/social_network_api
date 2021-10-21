@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-20 15:39-0300\n"
+"POT-Creation-Date: 2021-10-20 16:22-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,31 +18,31 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: posts/models.py:7
-msgid "image path"
-msgstr "caminho da imagem"
+#: posts/models.py:12
+msgid "image"
+msgstr "imagem"
 
-#: posts/models.py:8
+#: posts/models.py:13
 msgid "description"
 msgstr "descrição"
 
-#: posts/models.py:9
+#: posts/models.py:14
 msgid "user"
 msgstr "usuário"
 
-#: posts/models.py:10
+#: posts/models.py:15
 msgid "created"
 msgstr "criado"
 
-#: posts/models.py:11
+#: posts/models.py:16
 msgid "modified"
 msgstr "modificado"
 
-#: posts/models.py:18
+#: posts/models.py:23
 msgid "post"
 msgstr "publicação"
 
-#: posts/models.py:19
+#: posts/models.py:24
 msgid "posts"
 msgstr "publicações"
 
@@ -50,7 +50,7 @@ msgstr "publicações"
 msgid "Portugues"
 msgstr "Português"
 
-#: users/api/serializers.py:46
+#: users/api/serializers.py:50
 msgid "Password fields didn't match."
 msgstr "As senhas precisam ser iguais."
 

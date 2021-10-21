@@ -4,4 +4,5 @@ from posts.models import Posts
 
 @admin.register(Posts)
 class PostAdmin(admin.ModelAdmin):
-    list_display = ('image_path', 'description', 'user')
+    list_display = ('user', 'image', 'description', 'created', 'modified')
+    fields = ('user', 'image', 'description')

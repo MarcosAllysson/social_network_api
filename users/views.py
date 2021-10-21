@@ -1,11 +1,11 @@
 from django.contrib.auth.models import User
-from rest_framework import generics, permissions
-from rest_framework.response import Response
+from rest_framework.generics import CreateAPIView
 from rest_framework.permissions import IsAuthenticatedOrReadOnly, AllowAny
+from rest_framework.response import Response
 from users.api.serializers import UserSerializer, RegistrationSerializer
 
 
-class RegisterAPI(generics.CreateAPIView):
+class RegisterAPI(CreateAPIView):
     queryset = User.objects.all()
     permission_classes = [AllowAny]
     serializer_class = RegistrationSerializer
@@ -17,5 +17,4 @@ class RegisterAPI(generics.CreateAPIView):
 
         return Response({
             "user": UserSerializer(user, context=self.get_serializer_context()).data,
-            # "token": AuthToken.objects.create(user)[1]
         })
