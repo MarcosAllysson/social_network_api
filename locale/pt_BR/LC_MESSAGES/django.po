@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-20 16:22-0300\n"
+"POT-Creation-Date: 2021-10-21 20:58-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,39 +18,55 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: posts/models.py:12
+#: posts/api/viewsets.py:32
+msgid "Post created successfully"
+msgstr "Post criado com sucesso"
+
+#: posts/api/viewsets.py:44 posts/api/viewsets.py:60 posts/api/viewsets.py:78
+msgid "Post does not exist!"
+msgstr "Post não encontrado!"
+
+#: posts/api/viewsets.py:48
+msgid "Post deleted successfully!"
+msgstr "Post deletado com sucesso"
+
+#: posts/api/viewsets.py:82
+msgid "Post successfully updated!"
+msgstr "Post atualizado com sucesso"
+
+#: posts/models.py:7
 msgid "image"
 msgstr "imagem"
 
-#: posts/models.py:13
+#: posts/models.py:8
 msgid "description"
 msgstr "descrição"
 
-#: posts/models.py:14
+#: posts/models.py:9
 msgid "user"
 msgstr "usuário"
 
-#: posts/models.py:15
+#: posts/models.py:10
 msgid "created"
 msgstr "criado"
 
-#: posts/models.py:16
+#: posts/models.py:11
 msgid "modified"
 msgstr "modificado"
 
-#: posts/models.py:23
+#: posts/models.py:18
 msgid "post"
 msgstr "publicação"
 
-#: posts/models.py:24
+#: posts/models.py:19
 msgid "posts"
 msgstr "publicações"
 
-#: social_network_api/settings.py:97
+#: social_network_api/settings.py:95
 msgid "Portugues"
 msgstr "Português"
 
-#: users/api/serializers.py:50
+#: users/api/serializers.py:51
 msgid "Password fields didn't match."
 msgstr "As senhas precisam ser iguais."
 
