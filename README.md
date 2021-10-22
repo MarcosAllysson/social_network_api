@@ -26,9 +26,6 @@
 - "Regiser an user":
   * -- ENDPOINT: http://127.0.0.1:8000/register/
 
-## Deployed on heroku too (same endpoints)
-- https://ibr-tecnologia-api.herokuapp.com/
-
 ## Making a request
 - Login: http://127.0.0.1:8000/login/
   - Send json with username and password and get your token 
