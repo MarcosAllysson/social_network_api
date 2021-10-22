@@ -41,7 +41,7 @@ class PostsViewSet(ModelViewSet):
         try:
             requested_post = Posts.objects.get(pk=kwargs['pk'])
 
-            if requested_post.user == request.user or request.user.is_superuser:
+            if requested_post.user == request.user:
                 requested_post.delete()
 
                 return Response({
@@ -78,7 +78,7 @@ class PostsViewSet(ModelViewSet):
         try:
             requested_post = Posts.objects.get(pk=kwargs['pk'])
 
-            if requested_post.user == request.user or request.user.is_superuser:
+            if requested_post.user == request.user:
                 requested_post.image = request.data['image']
                 requested_post.description = request.data['description']
                 requested_post.user = request.user
