@@ -29,5 +29,9 @@
 - On header, include:
   - Authorization | Bearer <token>
 
+## Testing API
+- Create a post
+- Run: ```pytest posts/test/test_api.py```
+
 ## Access Django's admin
 - http://127.0.0.1:8000/admin/
