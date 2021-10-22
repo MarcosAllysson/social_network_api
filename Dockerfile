@@ -10,8 +10,8 @@ WORKDIR .
 
 # Install dependencies.
 RUN pip install --upgrade pip
-COPY requirements-dev.txt .
-RUN pip install -r requirements-dev.txt
+COPY requirements.txt .
+RUN pip install -r requirements.txt
 
 # Copy local code to the container image.
 COPY . .
