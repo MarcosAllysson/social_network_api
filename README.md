@@ -23,6 +23,9 @@
   * -- PUT: http://127.0.0.1:8000/api/v1/users/ID/
   * -- DELETE: http://127.0.0.1:8000/api/v1/users/ID/
 
+## Deployed on heroku too (same endpoints)
+- https://ibr-tecnologia-api.herokuapp.com/
+
 ## Making a request
 - Choose an endpoint
 - You can use postman, insomnia or any other API tool
