@@ -35,10 +35,7 @@ class PostsViewSet(ModelViewSet):
         serializer.validated_data['user'] = request.user
         serializer.save()
 
-        return Response({
-            'message': _('Post created successfully'),
-            status: status.HTTP_201_CREATED
-        })
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
 
     def destroy(self, request, *args, **kwargs):
         """
@@ -50,22 +47,13 @@ class PostsViewSet(ModelViewSet):
             if requested_post.user == request.user:
                 requested_post.delete()
 
-                return Response({
-                    'message': _('Post deleted successfully!'),
-                    status: status.HTTP_200_OK
-                })
+                return Response(status=status.HTTP_200_OK)
 
             else:
-                return Response({
-                    'message': _('You do not have permission to delete this post!'),
-                    status: status.HTTP_403_FORBIDDEN
-                })
+                return Response(status=status.HTTP_403_FORBIDDEN)
 
         except Posts.DoesNotExist:
-            return Response({
-                'message': _('Post does not exist!'),
-                status: status.HTTP_404_NOT_FOUND
-            })
+            return Response(status=status.HTTP_404_NOT_FOUND)
 
     def retrieve(self, request, *args, **kwargs):
         """
@@ -74,13 +62,10 @@ class PostsViewSet(ModelViewSet):
         try:
             requested_post = Posts.objects.get(pk=kwargs['pk'])
             serializer = PostsSerializer(requested_post)
-            return Response(serializer.data, status.HTTP_200_OK)
+            return Response(serializer.data, status=status.HTTP_200_OK)
 
         except Posts.DoesNotExist:
-            return Response({
-                'message': _('Post does not exist!'),
-                status: status.HTTP_404_NOT_FOUND
-            })
+            return Response(status=status.HTTP_404_NOT_FOUND)
 
     def update(self, request, *args, **kwargs):
         """
@@ -95,19 +80,10 @@ class PostsViewSet(ModelViewSet):
                 requested_post.user = request.user
                 requested_post.save()
 
-                return Response({
-                    'message': _('Post successfully updated!'),
-                    status: status.HTTP_200_OK
-                })
+                return Response(status=status.HTTP_200_OK)
 
             else:
-                return Response({
-                    'message': _('You do not have permission to update this post!'),
-                    status: status.HTTP_403_FORBIDDEN
-                })
+                return Response(status=status.HTTP_403_FORBIDDEN)
 
         except Posts.DoesNotExist:
-            return Response({
-                'message': _('Post does not exist!'),
-                status: status.HTTP_404_NOT_FOUND
-            })
+            return Response(status=status.HTTP_404_NOT_FOUND)
