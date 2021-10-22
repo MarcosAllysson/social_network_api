@@ -18,7 +18,7 @@
   * -- DELETE: http://127.0.0.1:8000/api/v1/posts/ID/
 
 - "Users": 
-  * -- GET: http://127.0.0.1:8000/api/v1//
+  * -- GET: http://127.0.0.1:8000/api/v1/users/
   * -- POST: http://127.0.0.1:8000/api/v1/users/
   * -- PUT: http://127.0.0.1:8000/api/v1/users/ID/
   * -- DELETE: http://127.0.0.1:8000/api/v1/users/ID/
