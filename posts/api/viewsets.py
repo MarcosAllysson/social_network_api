@@ -8,6 +8,7 @@ from posts.models import Posts
 
 
 class PostsViewSet(ModelViewSet):
+    queryset = Posts.objects.all()
     serializer_class = PostsSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
 
@@ -38,16 +39,23 @@ class PostsViewSet(ModelViewSet):
         DELETE a Post's register.
         """
         try:
-            Posts.objects.get(pk=kwargs['pk']).delete()
+            requested_post = Posts.objects.get(pk=kwargs['pk'])
+
+            if requested_post.user == request.user or request.user.is_superuser:
+                requested_post.delete()
+
+                return Response({
+                    'message': _('Post deleted successfully!'),
+                    'status': status.HTTP_200_OK
+                })
+
+            else:
+                return Response({
+                    'message': _('You do not have permission to delete this post!')
+                })
 
         except Posts.DoesNotExist:
             return Response({'message': _('Post does not exist!')})
-
-        else:
-            return Response({
-                'message': _('Post deleted successfully!'),
-                'status': status.HTTP_200_OK
-            })
 
     def retrieve(self, request, *args, **kwargs):
         """
@@ -69,16 +77,22 @@ class PostsViewSet(ModelViewSet):
         """
         try:
             requested_post = Posts.objects.get(pk=kwargs['pk'])
-            requested_post.image = request.data['image']
-            requested_post.description = request.data['description']
-            requested_post.user = request.user
-            requested_post.save()
+
+            if requested_post.user == request.user or request.user.is_superuser:
+                requested_post.image = request.data['image']
+                requested_post.description = request.data['description']
+                requested_post.user = request.user
+                requested_post.save()
+
+                return Response({
+                    'message': _('Post successfully updated!'),
+                    'status': status.HTTP_200_OK
+                })
+
+            else:
+                return Response({
+                    'message': _('You do not have permission to update this post!'),
+                })
 
         except Posts.DoesNotExist:
             return Response({'message': _('Post does not exist!')})
-
-        else:
-            return Response({
-                'message': _('Post successfully updated!'),
-                'status': status.HTTP_200_OK
-            })

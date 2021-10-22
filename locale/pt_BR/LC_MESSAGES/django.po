@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-21 20:58-0300\n"
+"POT-Creation-Date: 2021-10-21 21:23-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,17 +22,25 @@ msgstr ""
 msgid "Post created successfully"
 msgstr "Post criado com sucesso"
 
-#: posts/api/viewsets.py:44 posts/api/viewsets.py:60 posts/api/viewsets.py:78
-msgid "Post does not exist!"
-msgstr "Post não encontrado!"
-
-#: posts/api/viewsets.py:48
+#: posts/api/viewsets.py:47
 msgid "Post deleted successfully!"
 msgstr "Post deletado com sucesso"
 
-#: posts/api/viewsets.py:82
+#: posts/api/viewsets.py:53
+msgid "You do not have permission to delete this post!"
+msgstr "Você não tem permissão para deletar este post!"
+
+#: posts/api/viewsets.py:57 posts/api/viewsets.py:67 posts/api/viewsets.py:97
+msgid "Post does not exist!"
+msgstr "Post não encontrado!"
+
+#: posts/api/viewsets.py:87
 msgid "Post successfully updated!"
 msgstr "Post atualizado com sucesso"
+
+#: posts/api/viewsets.py:93
+msgid "You do not have permission to update this post!"
+msgstr "Você não tem permissão para atualizar este post!"
 
 #: posts/models.py:7
 msgid "image"
