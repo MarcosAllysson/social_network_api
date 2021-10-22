@@ -23,7 +23,7 @@
   * -- PUT: http://127.0.0.1:8000/api/v1/users/ID/
   * -- DELETE: http://127.0.0.1:8000/api/v1/users/ID/
 
-- "Regiser an user:":
+- "Regiser an user":
   * -- ENDPOINT: http://127.0.0.1:8000/register/
 
 ## Deployed on heroku too (same endpoints)
