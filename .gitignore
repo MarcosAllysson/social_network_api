@@ -2,7 +2,6 @@ venv
 .idea
 staticfiles
 .pytest_cache
-staticfiles
 __pycache__
 *.*~
 *.pyc
