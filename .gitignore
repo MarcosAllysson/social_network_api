@@ -1,6 +1,5 @@
 venv
 .idea
-staticfiles
 .pytest_cache
 __pycache__
 *.*~
