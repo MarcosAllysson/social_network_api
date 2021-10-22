@@ -17,7 +17,7 @@
   * -- PUT: http://127.0.0.1:8000/api/v1/posts/ID/
   * -- DELETE: http://127.0.0.1:8000/api/v1/posts/ID/
 
-- "Users": 
+- "Users" (only admin can access): 
   * -- GET: http://127.0.0.1:8000/api/v1/users/
   * -- POST: http://127.0.0.1:8000/api/v1/users/
   * -- PUT: http://127.0.0.1:8000/api/v1/users/ID/
@@ -27,10 +27,14 @@
 - https://ibr-tecnologia-api.herokuapp.com/
 
 ## Making a request
+- Login: http://127.0.0.1:8000/login/
+  - Send json with username and password and get your token 
 - Choose an endpoint
 - You can use postman, insomnia or any other API tool
 - On header, include:
   - Authorization | Bearer <token>
+- On post's image:
+  - Send a multipart-form
 
 ## Testing API
 - Create a post
@@ -38,3 +42,5 @@
 
 ## Access Django's admin
 - http://127.0.0.1:8000/admin/
+  - User: admin
+  - Pass: admin

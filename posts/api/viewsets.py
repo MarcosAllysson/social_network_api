@@ -16,8 +16,14 @@ class PostsViewSet(ModelViewSet):
         """
         GET all registers from Posts table.
         """
-        posts = Posts.objects.all()
-        serializer = PostsSerializer(posts, many=True)
+        queryset = self.filter_queryset(self.get_queryset())
+        page = self.paginate_queryset(queryset)
+
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+
+        serializer = self.get_serializer(queryset, many=True)
         return Response(serializer.data)
 
     def create(self, request, *args, **kwargs):
@@ -31,7 +37,7 @@ class PostsViewSet(ModelViewSet):
 
         return Response({
             'message': _('Post created successfully'),
-            'status': status.HTTP_201_CREATED
+            status: status.HTTP_201_CREATED
         })
 
     def destroy(self, request, *args, **kwargs):
@@ -46,16 +52,20 @@ class PostsViewSet(ModelViewSet):
 
                 return Response({
                     'message': _('Post deleted successfully!'),
-                    'status': status.HTTP_200_OK
+                    status: status.HTTP_200_OK
                 })
 
             else:
                 return Response({
-                    'message': _('You do not have permission to delete this post!')
+                    'message': _('You do not have permission to delete this post!'),
+                    status: status.HTTP_403_FORBIDDEN
                 })
 
         except Posts.DoesNotExist:
-            return Response({'message': _('Post does not exist!')})
+            return Response({
+                'message': _('Post does not exist!'),
+                status: status.HTTP_404_NOT_FOUND
+            })
 
     def retrieve(self, request, *args, **kwargs):
         """
@@ -63,13 +73,14 @@ class PostsViewSet(ModelViewSet):
         """
         try:
             requested_post = Posts.objects.get(pk=kwargs['pk'])
+            serializer = PostsSerializer(requested_post)
+            return Response(serializer.data, status.HTTP_200_OK)
 
         except Posts.DoesNotExist:
-            return Response({'message': _('Post does not exist!')})
-
-        else:
-            serializer = PostsSerializer(requested_post)
-            return Response(serializer.data)
+            return Response({
+                'message': _('Post does not exist!'),
+                status: status.HTTP_404_NOT_FOUND
+            })
 
     def update(self, request, *args, **kwargs):
         """
@@ -86,13 +97,17 @@ class PostsViewSet(ModelViewSet):
 
                 return Response({
                     'message': _('Post successfully updated!'),
-                    'status': status.HTTP_200_OK
+                    status: status.HTTP_200_OK
                 })
 
             else:
                 return Response({
                     'message': _('You do not have permission to update this post!'),
+                    status: status.HTTP_403_FORBIDDEN
                 })
 
         except Posts.DoesNotExist:
-            return Response({'message': _('Post does not exist!')})
+            return Response({
+                'message': _('Post does not exist!'),
+                status: status.HTTP_404_NOT_FOUND
+            })
