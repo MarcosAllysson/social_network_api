@@ -4,11 +4,11 @@
 - Django
 - Django Rest Framework
 
-## To run
+## To run locally
 - Clone this repository
-- Install and active virtual environment
-- Execute: ```pip install -r requirements.txt```
-- Then: ```python manage.py runserver```
+- Install and active a virtual environment
+- Execute: ```docker-compose build```
+- Execute: ```docker-compose up```
 
 ## Endpoints
 - "Posts":  
